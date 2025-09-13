@@ -1,0 +1,213 @@
+:root {
+    --neon-green: #0f0;
+    --neon-magenta: #f0f;
+    --neon-cyan: #0ff;
+    --dark-bg: #000;
+    --light-text: #ccc;
+    --body-text: #eee;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--body-text);
+    font-family: 'VT323', monospace;
+    margin: 1px;
+    padding: 1px;
+    font-size: 1.5rem; /* Increased base font size for pixel font */
+}
+
+h1, h2, h3, h4, h5, .card-title, #name-container, .navbar-brand, .nav-link, .btn, .folder-body {
+    font-family: 'Press Start 2P', cursive;
+}
+
+p {
+    font-size: 1.5rem; /* Corrected paragraph font size */
+    line-height: 1.6;
+}
+
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.navbar {
+    background-color: rgba(0,0,0,0.8);
+    border-bottom: 1px solid var(--neon-magenta);
+}
+
+.navbar-brand {
+    color: var(--neon-magenta) !important;
+    text-shadow: 0 0 5px var(--neon-magenta);
+    font-size: 1rem; /* Adjusted for pixel font */
+}
+
+
+.navbar-brand::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.nav-link {
+    position: inline;
+    gap: 10px;
+    align-items: center;
+    color: var(--neon-cyan) !important;
+    border: 1px solid var(--neon-cyan);
+    padding: 10px 15px;
+    margin: 3px 5px;
+    font-size: 0.8rem; /* Adjusted for pixel font */
+    transition: color 0.3s, text-shadow 0.3s, background-color 0.3s, transform 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--dark-bg) !important;
+    background-color: var(--neon-cyan);
+    text-shadow: none;
+    transform: scale(1.1);
+}
+
+h2 {
+    color: var(--neon-cyan);
+    text-align: center;
+    font-size: 1.8rem; /* Adjusted for pixel font */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px var(--neon-cyan);
+}
+
+.project-card {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--neon-green);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px var(--neon-green), 0 0 10px var(--neon-green) inset;
+}
+
+.card-title {
+    color: var(--neon-green);
+    font-size: 1.5rem; /* Adjusted for pixel font */
+    text-shadow: 0 0 5px var(--neon-green);
+}
+
+.card-text {
+    color: var(--light-text);
+    font-size: 1.2rem; /* Adjusted card text size */
+    font-family: 'VT323', monospace; /* Ensure card text uses body font */
+}
+
+.btn {
+    font-size: 0.8rem; /* Adjusted for pixel font */
+}
+
+.btn-outline-success {
+    color: var(--neon-magenta);
+    border-color: var(--neon-magenta);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.btn-outline-success:hover {
+    color: var(--dark-bg);
+    background-color: var(--neon-magenta);
+    box-shadow: 0 0 15px var(--neon-magenta);
+}
+
+#contato a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+#contato a:hover {
+    color: var(--neon-magenta);
+    text-shadow: 0 0 10px var(--neon-magenta);
+}
+
+#navbar-nav {
+    justify-content: flex-end;
+}
+
+#container-fluid {
+    border-radius: 200px;
+    padding: 200px;
+}
+
+/* Name animation styles */
+#name-container {
+    font-size: 2.5rem; /* Adjusted for pixel font */
+    font-weight: bold;
+    text-align: center;
+    color: var(--neon-green);
+    text-shadow: 0 0 10px var(--neon-green);
+    height: 100px; /* Added height to prevent layout shift */
+}
+
+#name::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+/* Folder styles */
+#folder-section {
+    display: flex;
+    gap: 40px;
+}
+
+.folder-wrapper a {
+    text-decoration: none;
+}
+
+.folder {
+    width: 150px;
+    height: 100px;
+    position: relative;
+    background-color: rgba(10, 25, 10, 0.5);
+    border: 1px solid var(--neon-cyan);
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.folder:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+}
+
+.folder-tab {
+    width: 40%;
+    height: 15px;
+    background-color: rgba(10, 25, 10, 0.7);
+    border: 1px solid var(--neon-cyan);
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+}
+
+.folder-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: var(--neon-cyan);
+    font-size: 1rem; /* Adjusted for pixel font */
+    font-family: 'Press Start 2P', cursive; /* Ensure folder body uses pixel font */
+}
+
