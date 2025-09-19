@@ -1,3 +1,7 @@
+/* 
+    VARIÁVEIS DE COR E FONTES
+    Define as cores e fontes principais para manter a consistência do tema.
+*/
 :root {
     --neon-green: #0f0;
     --neon-magenta: #f0f;
@@ -7,24 +11,49 @@
     --body-text: #eee;
 }
 
+/* 
+    ESTILOS GERAIS
+    Configurações básicas para o corpo da página, como fundo, cor do texto e fonte.
+*/
 body {
     background-color: var(--dark-bg);
     color: var(--body-text);
     font-family: 'VT323', monospace;
-    margin: 1px;
-    padding: 1px;
-    font-size: 1.5rem; /* Increased base font size for pixel font */
+    margin: 0; /* Remove a margem padrão do corpo */
+    padding: 0; /* Remove o preenchimento padrão do corpo */
+    font-size: 1.5rem; /* Aumenta o tamanho da fonte base para a fonte pixelada */
 }
 
-h1, h2, h3, h4, h5, .card-title, #name-container, .navbar-brand, .nav-link, .btn, .folder-body {
+/* 
+    AJUSTE DO CONTAINER BOOTSTRAP
+    Ajusta o preenchimento do container para melhor alinhamento.
+*/
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* 
+    FONTES DOS TÍTULOS E ELEMENTOS DE DESTAQUE
+    Aplica a fonte 'Press Start 2P' para títulos e outros elementos para um estilo retrô.
+*/
+h1, h2, h3, h4, h5, #name-container, .navbar-brand, .nav-link, .folder-body {
     font-family: 'Press Start 2P', cursive;
 }
 
+/* 
+    ESTILO DOS PARÁGRAFOS
+    Define o tamanho da fonte e a altura da linha para os parágrafos.
+*/
 p {
-    font-size: 1.5rem; /* Corrected paragraph font size */
+    font-size: 1.5rem; /* Tamanho da fonte corrigido para parágrafos */
     line-height: 1.6;
 }
 
+/* 
+    FUNDO ANIMADO MATRIX
+    Posiciona o canvas do efeito Matrix fundo fixo.
+*/
 #matrix-canvas {
     position: fixed;
     top: 0;
@@ -34,18 +63,29 @@ p {
     z-index: -1;
 }
 
+/* 
+    BARRA DE NAVEGAÇÃO
+    Estiliza a barra de navegação com um fundo semitransparente e uma borda neon.
+*/
 .navbar {
     background-color: rgba(0,0,0,0.8);
     border-bottom: 1px solid var(--neon-magenta);
 }
 
-.navbar-brand {
-    color: var(--neon-magenta) !important;
+/* 
+    MARCA DA BARRA DE NAVEGAÇÃO (LOGO)
+    Estiliza o texto do logotipo com cor neon e efeito de sombra.
+*/
+.navbar .navbar-brand {
+    color: var(--neon-magenta);
     text-shadow: 0 0 5px var(--neon-magenta);
-    font-size: 1rem; /* Adjusted for pixel font */
+    font-size: 1.3rem; /* Ajustado para a fonte pixelada */
 }
 
-
+/* 
+    CURSOR PISCANDO
+    Adiciona um cursor piscando ao lado do logotipo.
+*/
 .navbar-brand::after {
     content: '|';
     animation: blink 1s infinite;
@@ -60,78 +100,71 @@ p {
     }
 }
 
-.nav-link {
-    position: inline;
+/* 
+    LINKS DA BARRA DE NAVEGAÇÃO
+    Estiliza os links da navegação com bordas e cores neon.
+*/
+.navbar .nav-link {
     gap: 10px;
     align-items: center;
-    color: var(--neon-cyan) !important;
+    color: var(--neon-cyan);
     border: 1px solid var(--neon-cyan);
     padding: 10px 15px;
     margin: 3px 5px;
-    font-size: 0.8rem; /* Adjusted for pixel font */
+    font-size: 0.8rem; /* Ajustado para a fonte pixelada */
     transition: color 0.3s, text-shadow 0.3s, background-color 0.3s, transform 0.3s;
 }
 
-.nav-link:hover {
-    color: var(--dark-bg) !important;
+/* 
+    EFEITO HOVER NOS LINKS DA NAVEGAÇÃO
+    Muda a cor do texto e do fundo ao passar o mouse sobre os links.
+*/
+.navbar .nav-link:hover {
+    color: var(--dark-bg);
     background-color: var(--neon-cyan);
     text-shadow: none;
     transform: scale(1.1);
 }
 
+/* 
+    ALINHAMENTO DOS ITENS DA NAVEGAÇÃO
+    Alinha os itens da navegação à direita.
+*/
+#navbarNav {
+    justify-content: flex-end;
+}
+
+/* 
+    TÍTULOS DE SEÇÃO (H2)
+    Estiliza os títulos de seção com cor neon e sombra.
+*/
 h2 {
     color: var(--neon-cyan);
     text-align: center;
-    font-size: 1.8rem; /* Adjusted for pixel font */
+    font-size: 1.8rem; /* Ajustado para a fonte pixelada */
     margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 0 0 8px var(--neon-cyan);
 }
 
-.project-card {
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 1px solid var(--neon-green);
-    transition: box-shadow 0.3s, transform 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 25px var(--neon-green), 0 0 10px var(--neon-green) inset;
-}
-
-.card-title {
-    color: var(--neon-green);
-    font-size: 1.5rem; /* Adjusted for pixel font */
-    text-shadow: 0 0 5px var(--neon-green);
-}
-
-.card-text {
-    color: var(--light-text);
-    font-size: 1.2rem; /* Adjusted card text size */
-    font-family: 'VT323', monospace; /* Ensure card text uses body font */
-}
-
-.btn {
-    font-size: 0.8rem; /* Adjusted for pixel font */
-}
-
-.btn-outline-success {
-    color: var(--neon-magenta);
-    border-color: var(--neon-magenta);
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-}
-
-.btn-outline-success:hover {
-    color: var(--dark-bg);
-    background-color: var(--neon-magenta);
-    box-shadow: 0 0 15px var(--neon-magenta);
+/* 
+    SEÇÃO DE CONTATO
+    Estiliza os links na seção de contato.
+*/
+#contato ul {  
+    padding: 60px;
+    text-align: center;
+    list-style: none;
+    font-size: 2rem; /* Aumenta o tamanho da fonte para a lista de contatos */
 }
 
 #contato a {
-    color: var(--neon-cyan);
+    
+    color: var(--neon-green); /* Muda a cor do link para verde neon */
     text-decoration: none;
     transition: color 0.3s, text-shadow 0.3s;
+    text-shadow: 0 0 5px var(--neon-green); /* Adiciona um brilho ao texto */
 }
 
 #contato a:hover {
@@ -139,23 +172,38 @@ h2 {
     text-shadow: 0 0 10px var(--neon-magenta);
 }
 
-#navbar-nav {
-    justify-content: flex-end;
+/* 
+    SEÇÃO "SOBRE MIM"
+    Estiliza a seção "Sobre Mim" com um neon.
+*/
+#sobre {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--neon-green);
+    box-shadow: -2px -2px 10px var(--neon-magenta);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px; /* Ajusta a margem para separar do cabeçalho */
+    margin-bottom: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#container-fluid {
-    border-radius: 200px;
-    padding: 200px;
+.container-fluid {
+    padding: 20px;
 }
 
-/* Name animation styles */
+/* 
+    ANIMAÇÃO DO NOME
+    Estiliza o container do nome com fonte pixelada e efeito de sombra.
+*/
 #name-container {
-    font-size: 2.5rem; /* Adjusted for pixel font */
+    font-size: 2.5rem; /* Ajustado para a fonte pixelada */
     font-weight: bold;
     text-align: center;
     color: var(--neon-green);
     text-shadow: 0 0 10px var(--neon-green);
-    height: 100px; /* Added height to prevent layout shift */
+    height: 100px; /* Altura adicionada para evitar mudança de layout */
 }
 
 #name::after {
@@ -163,9 +211,15 @@ h2 {
     animation: blink 1s infinite;
 }
 
-/* Folder styles */
+
+
+/* 
+    NAVEGAÇÃO EM PASTAS
+    Estiliza a seção de navegação em pastas.
+*/
 #folder-section {
     display: flex;
+    justify-content: center; /* Centraliza as pastas */
     gap: 40px;
 }
 
@@ -207,7 +261,128 @@ h2 {
     align-items: center;
     height: 100%;
     color: var(--neon-cyan);
-    font-size: 1rem; /* Adjusted for pixel font */
-    font-family: 'Press Start 2P', cursive; /* Ensure folder body uses pixel font */
+    font-size: 1rem; /* Ajustado para a fonte pixelada */
+    font-family: 'Press Start 2P', cursive; /* Garante que o corpo da pasta use a fonte pixelada */
 }
 
+/* 
+    ESTILOS DO CARROSSEL
+    Configurações para o container, trilha e slides do carrossel.
+*/
+.carousel-container {
+    position: relative;
+    width: 60%; /* Cartões mais estreitos */
+    margin: 0 auto;
+}
+
+.carousel-track-wrapper {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+/* 
+    BOTÕES DE NAVEGAÇÃO DO CARROSSEL
+    Estiliza os botões de "anterior" e "próximo".
+*/
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 2; /* Garante que os botões fiquem sobre os slides */
+}
+
+.carousel-button.prev {
+    left: -50px; /* Afasta o botão da esquerda em 30px */
+}
+
+.carousel-button.next {
+    right: -50px; /* Afasta o botão da direita em 30px */
+}
+
+/* 
+    ESTILOS DA JANELA DO NAVEGADOR
+    Cria a aparência de uma janela de navegador antiga para os projetos.
+*/
+.browser-window {
+    border: 2px solid var(--neon-green);
+    border-radius: 5px;
+    background-color: #000;
+    margin: 20px;
+    box-shadow: 0 0 20px var(--neon-green);
+}
+
+.browser-header {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: #333;
+    border-bottom: 2px solid var(--neon-green);
+}
+
+.browser-buttons {
+    display: flex;
+}
+
+.browser-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 1px solid #000;
+}
+
+.browser-button.close {
+    background-color: #ff5f56;
+}
+
+.browser-button.minimize {
+    background-color: #ffbd2e;
+}
+
+.browser-button.maximize {
+    background-color: #27c93f;
+}
+
+.browser-title {
+    color: var(--neon-green);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+
+.browser-content {
+    padding: 10px;
+}
+
+.browser-content iframe {
+    width: 100%;
+    height: 500px; /* Cartões mais altos */
+    border: none;
+}
+
+/*
+    FOOTER
+    Estiliza o rodapé da página.
+*/
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--neon-magenta);
+    color: var(--light-text);
+}
