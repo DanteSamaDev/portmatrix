@@ -91,6 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
             typeWriter(nameText, 0);
         }
 
+
+         
         // Carousel Logic
         const track = document.querySelector('.carousel-track');
         if (track) {
