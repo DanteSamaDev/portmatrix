@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Portfólio Joaquim Silva</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" >
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+</head>
+    <body>
+        <canvas id="matrix-canvas"></canvas>
+            <div id="header-placeholder"></div>
+            
+            <main class="container text-white">
+                <section id="contato" class="my-5">
+                    <h2 class="text-center mb-4">Contatos</h2>
+                    <ul class="list-unstyled text-center">
+                        <li><strong>Email:</strong><a href="mailto:dantesamadesign@gmail.com?subject=Contato" target="_blank">dantesamadesign@gmail.com</a></li>
+                        <li><strong>LinkedIn:</strong><a href="https://www.linkedin.com/in/dantesamadev" target="_blank">DanteSamaDev</a></li>
+                        <li><strong>GitHub:</strong> <a href="https://github.com/DanteSamaDev/DanteSamaDev" target="_blank">DanteSamaDev</a></li>
+                    </ul>
+                    <form id="contact-form">
+                        <h3>Envie uma mensagem</h3>
+                        <label for="nome">Seu nome:</label>
+                        <div class="neon"><input id="seu-nome" type="text" placeholder="Seu nome" ></div>
+                        <label for="email">Seu email:</label>
+                        <div class="neon"><input id="seu-email" type="email" placeholder="Seu email"></div>
+                        <label for="mensagem">Sua mensagem:</label>
+                        <div class="neon"><textarea id="sua-mensagem" placeholder="Sua mensagem" rows="10" required></textarea></div>
+                        <button id="btn" type="submit" class="neon">Enviar</button>
+                    </form>
+                </section>
+                <div id="folder-section" class="mt-5 d-flex justify-content-center" style="gap: 40px;">
+                    <div class="folder-wrapper">
+                        <a href="index.html">
+                            <div class="folder">
+                                <div class="folder-tab"></div>
+                                <div class="folder-body"><span>Home</span></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="folder-wrapper">
+                        <a href="projetos.html">
+                            <div class="folder">
+                                <div class="folder-tab"></div>
+                                <div class="folder-body"><span>Projetos</span></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            
+            </main>
+
+            <div id="footer-placeholder"></div>
+
+            
+                <script src="script.js"></script>
+    </body>
+</html>
